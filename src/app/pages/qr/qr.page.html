@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>QR</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">QR</ion-title>
+      <ion-img
+  src="assets/icon/qrcode-generado.png"
+  alt="The Wisconsin State Capitol building in Madison, WI at night"
+></ion-img>
+    </ion-toolbar>
+  </ion-header>
+  <ion-button routerLink ="/mapa-cliente" style="margin-left: 50px; margin-bottom: 30px;">Mapa de ruta</ion-button> 
+</ion-content>

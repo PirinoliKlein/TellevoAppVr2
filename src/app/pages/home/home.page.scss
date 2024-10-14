@@ -1,0 +1,13 @@
+ion-card {
+    margin: 0;  // Asegura que no haya márgenes que limiten el espacio
+    padding: 0;  // Asegura que no haya padding adicional
+    overflow: hidden;  // Opcional: Asegura que la imagen no sobresalga del card
+  }
+  
+  .gif-coche {
+    width: 100%;  // Ocupa todo el ancho del card
+    height: auto;  // Mantiene la proporción del GIF
+    object-fit: cover;  // Ajusta la imagen para cubrir el área del card sin distorsionarse
+    display: block;  // Asegura que la imagen se comporte como un bloque
+  }
+  

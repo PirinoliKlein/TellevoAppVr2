@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title>En ruta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- CARD PARA LA BIENVENIDA -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Hola</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Su viaje esta activo.
+    </ion-card-content>
+  </ion-card>
+  <ion-button routerLink="/mapa-cliente" color="success" style="margin-left: 30%;" >⬅ Volver</ion-button>
+  <!-- conductor -->
+  <div style="display: flex; justify-content: space-around;">
+    <ion-card style="width: 45%; margin-top: 35px;">
+      <img class="gif-coche" alt="" src="assets/icon/coche.gif" />
+      <ion-card-header>
+        <ion-card-title>Chofer</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+       <p>En este momento no puedes seleccionar esta opcion.</p>
+        <ion-button color="success" expand="full">
+          <ion-icon  slot="start" name="car-outline"></ion-icon>
+          Driver
+          </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card style="width: 45%; margin-top: 35px;">
+      <img alt="" src="assets/icon/tailandes.gif" />
+      <ion-card-header>
+        <ion-card-title>Pasajero</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p>En este momento no puedes seleccionar esta opcion.</p>
+        <ion-button color="success" expand="full">
+          <ion-icon slot="start" name="star"></ion-icon>
+          Tarifas
+        </ion-button>
+      </ion-card-content>
+    </ion-card>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Te Llevo App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-card >
+    <ion-img src="assets/icon/servicio-de-auto.png" routerLink="/login-admin" style="cursor: pointer;"></ion-img>
+    <ion-card-content [formGroup]="loginForm">
+      <ion-item>
+        <ion-input formControlName="email" [(ngModel)]="emailValue" type="email" label="Usuario:" labelPlacement="floating" placeholder="Ej: BastianQ"></ion-input>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('required')">
+        El correo es de caracter obligatorio!
+      </ion-text>
+      <ion-text position="stacked" color="danger" *ngIf="loginForm.get('email')?.hasError('email')">
+        El correo no es valido!
+      </ion-text>
+      <ion-item>
+        <ion-input formControlName="pass" [(ngModel)]="passValue" type="password" labelPlacement="floating" label="Contraseña:" placeholder="Ej: calceta65"></ion-input>
+      </ion-item>
+      <ion-text position="stacked" color="danger" *ngIf="loginForm.get('pass')?.hasError('required')">
+        La contraseña es obligatoria!
+      </ion-text>
+      <ion-text position="stacked" color="danger" *ngIf="loginForm.get('pass')?.hasError('minlength')">
+        La contraseña, min 6 caracteres!
+      </ion-text>
+      <ion-button style="margin-bottom: 10px;" expand="full" (click)="login()" color="success">Ingresar</ion-button>
+      <ion-button expand="full" routerLink="/restablecer" color="success">Restablecer contraseña</ion-button>
+      <ion-button expand="full" routerLink="/registro" color="success">Registrarse</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

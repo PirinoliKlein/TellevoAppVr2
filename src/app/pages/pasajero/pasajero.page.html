@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Viajes Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let aux of viajes" (click)="verDetalleChofer(aux)">
+      <ion-avatar>
+        <img [src]="aux.imagen" alt="">
+      </ion-avatar>
+      <ion-label>
+        <h2><button style="background: transparent; border: none;" (click)="abrirModal(aux)">{{ aux.nombreConductor }} </button></h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-modal [isOpen]="modalAbierta" breakpoints="[0, 0.95, 1]" initialBreakpoint="0.95">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Detalles del Viaje</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-avatar>
+        <img [src]="viajeSeleccionado.imagen" alt="Imagen del conductor">
+      </ion-avatar>
+      <p>Conductor: {{viajeSeleccionado.nombreConductor}}</p>
+      <p>Precio: {{viajeSeleccionado.precio}}</p>
+      <p>Destino: {{viajeSeleccionado.Direccion}}</p>
+      <p>Patente: {{viajeSeleccionado.Patente}}</p>
+      <ion-button expand="block" routerLink="/ubicacion-chofer" color="success">Aceptar Viaje</ion-button>
+    </ion-content>
+  </ng-template>
+</ion-modal>
