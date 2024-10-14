@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController, LoadingController, MenuController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/firebas/usuarios.service.spec';
-import { UsuariosService } from 'src/app/services/usuarios.service';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Usuario } from 'src/app/folder/interfaces/usuario';
 import Swal from 'sweetalert2';
@@ -21,7 +20,7 @@ passValue?: string;
 
 
 
-  constructor(private router:Router, private formBuilder:FormBuilder, private alertController: AlertController, private loadingController: LoadingController,private usuariosService: UsuariosService,
+  constructor(private router:Router, private formBuilder:FormBuilder, private alertController: AlertController, private loadingController: LoadingController,
     private AuthService: AuthService,  private firestore: AngularFirestore,
     private menuController: MenuController) { 
     this.loginForm = this.formBuilder.group({
